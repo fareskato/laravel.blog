@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+//  Relationship with author(user model)
+    public function author(){
+        return $this->belongsTo(User::class);
+    }
+
     // image usr accessor
     public function getImageUrlAttribute(){
 //        $imageUrl = "http://via.placeholder.com/750x450";
@@ -18,6 +24,12 @@ class Post extends Model
         }
         return $imageUrl;
     }
+
+    // date accessor
+    public function getDateAttribute(){
+        return $this->created_at->diffForHumans();
+    }
+
 
 
 }
