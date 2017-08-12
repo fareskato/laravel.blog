@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-});
+// Home page
+Route::get('/',[
+    'uses' => 'PostController@index'
+]);
+
 
 Route::get('/blog/show', function () {
     return view('blog.show');
