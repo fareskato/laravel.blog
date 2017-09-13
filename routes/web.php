@@ -20,3 +20,9 @@ Route::get('/',[
 Route::get('/blog/show', function () {
     return view('blog.show');
 });
+Auth::routes();
+
+Route::get('/home', 'Backend\HomeController@index')->name('home');
+
+
+Route::resource('/backend/blog', 'Backend\BlogController');
