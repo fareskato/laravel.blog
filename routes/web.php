@@ -17,10 +17,13 @@ Route::get('/',[
     'as' => 'blog'
 ]);
 
+Route::get('/blog/{post}',[
+    'uses' => 'PostController@show',
+    'as' => 'post.show'
+]);
 
-Route::get('/blog/show', function () {
-    return view('blog.show');
-});
+
+
 Auth::routes();
 
 Route::get('/home', 'Backend\HomeController@index')->name('home');

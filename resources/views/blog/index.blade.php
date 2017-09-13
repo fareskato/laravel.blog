@@ -8,15 +8,13 @@
                     <article class="post-item">
                     @if($post->image_url)
                         <div class="post-item-image">
-                            <a href="post.html">
                                 {{-- use accessor --}}
                                 <img src="{{$post->image_url}}" alt="">
-                            </a>
                         </div>
                     @endif
                     <div class="post-item-body">
                         <div class="padding-10">
-                            <h2>{{$post->title}}</h2>
+                            <h2><a href="{{route('post.show', ['id' => $post->id])}}">{{$post->title}}</a></h2>
                             <p>{{$post->excerpt}}</p>
                         </div>
                         <div class="post-meta padding-10 clearfix">
