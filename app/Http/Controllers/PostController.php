@@ -20,10 +20,13 @@ class PostController extends Controller
 
     /**
      * Display single post
+     * @param Post $post
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
+        // Just published post
+
         return view('blog.show', compact('post'));
     }
 

@@ -17,6 +17,7 @@ Route::get('/',[
     'as' => 'blog'
 ]);
 
+// Show post(with binding for seo friendly route)
 Route::get('/blog/{post}',[
     'uses' => 'PostController@show',
     'as' => 'post.show'

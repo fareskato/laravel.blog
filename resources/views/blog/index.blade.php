@@ -14,7 +14,7 @@
                     @endif
                     <div class="post-item-body">
                         <div class="padding-10">
-                            <h2><a href="{{route('post.show', ['id' => $post->id])}}">{{$post->title}}</a></h2>
+                            <h2><a href="{{route('post.show', ['slug' => $post->slug])}}">{{$post->title}}</a></h2>
                             <p>{{$post->excerpt}}</p>
                         </div>
                         <div class="post-meta padding-10 clearfix">
