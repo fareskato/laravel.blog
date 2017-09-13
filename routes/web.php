@@ -13,7 +13,8 @@
 
 // Home page
 Route::get('/',[
-    'uses' => 'PostController@index'
+    'uses' => 'PostController@index',
+    'as' => 'blog'
 ]);
 
 

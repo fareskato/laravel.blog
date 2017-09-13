@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // posts per page
+    // Posts per page
     const LIMIT = 3;
 
+    /**
+     * Display all post(DESC)
+     */
     public function index(){
-        $posts = Post::orderBy('created_at', 'disc')->simplePaginate($this::LIMIT); // or paginate(3)
+        $posts = Post::with('author')->latestFirst()->published()->simplePaginate($this::LIMIT); // or paginate(3)
          return view('blog.index', compact('posts', $posts));
     }
+
+
+
 }
